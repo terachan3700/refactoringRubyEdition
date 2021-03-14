@@ -7,15 +7,15 @@ class CustomerTest < Minitest::Test
   def test_statement
     customer = Customer.new('terachan')
 
-    movie1 = Movie.new("on the load", 2)
+    movie1 = Movie.new("on the load", ChildrensPrice.new)
     rental1 = Rental.new(movie1, 10)
     customer.add_rental(rental1)
 
-    movie2 = Movie.new("mask", 0)
+    movie2 = Movie.new("mask", ReqularPrice.new)
     rental2 = Rental.new(movie2, 23)
     customer.add_rental(rental2)
 
-    movie3 = Movie.new("jojo", 1)
+    movie3 = Movie.new("jojo", NewReleasePrice.new)
     rental3 = Rental.new(movie3, 23)
     customer.add_rental(rental3)
 
